@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build stage') {
             steps {
-               withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/') {
+               withDockerRegistry(credentialsId: 'docker-hub1', url: 'https://index.docker.io/') {
                    sh 'docker build -t nguyenvancongdev/automation_IOPS .'
                    sh 'docker push nguyenvancongdev/automation_IOPS'
                 }
