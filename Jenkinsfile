@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'emyeu' }
     stages {
         stage('Clone') {
             steps {
@@ -17,5 +17,4 @@ pipeline {
         //     }
         // }
     }
-     agent { label 'emyeu' }
 }
