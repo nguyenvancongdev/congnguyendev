@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent 'jenkins-k8s'
     stages {
         stage('Clone') {
             steps {
