@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'jenkins-k8s' }
+    agent any
     stages {
         stage('Clone') {
             steps {
@@ -17,4 +17,5 @@ pipeline {
         //     }
         // }
     }
+     agent { label 'emyeu' }
 }
