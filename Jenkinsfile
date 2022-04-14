@@ -15,7 +15,7 @@ pipeline {
         }
      }
     stages {
-        stage('Clone') {
+        stage('Cloe') {
             steps {
                echo 'toir'
             }
