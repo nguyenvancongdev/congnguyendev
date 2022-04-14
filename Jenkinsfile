@@ -6,11 +6,8 @@ pipeline {
                 kind: Pob
                 spec:
                     containers:
-                    - name: maven
-                    image: maven:alpine
-                    command:
-                    - cat
-                    tty: true
+                    - name: nginx-cong
+                    image: nginx:latest
                 '''
         }
      }
