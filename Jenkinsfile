@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'emyeu' }
+    agent { label 'kubepod' }
     stages {
         stage('Clone') {
             steps {
