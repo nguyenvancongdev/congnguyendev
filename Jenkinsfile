@@ -5,9 +5,9 @@ pipeline {
         }
      }
     stages {
-        stage('Cloe') {
+        stage('Clone') {
             steps {
-               echo 'toir'
+              git 'https://github.com/nguyenvancongdev/automation_IOPS.git', branch:'master'
             }
         }
     }
