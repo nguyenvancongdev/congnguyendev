@@ -17,10 +17,10 @@ pipeline {
                                 app: nginx-deployment
                         spec:
                             containers:
-                                name: nginx-deployment
+                            -   name: nginx-deployment
                                 image: nginx
                                 ports:
-                                    containerPort: 8080
+                                -   containerPort: 8080
                 '''
         } 
     }
