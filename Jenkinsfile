@@ -17,12 +17,12 @@ pipeline {
                                 app: nginx-deployment
                         spec:
                             containers:
-                            -   name: nginx-deployment
+                                name: nginx-deployment
                                 image: nginx
                                 ports:
-                                # port bên trong container
-                                -  containerPort: 8080
-                ---
+                                    containerPort: 8080
+                '''
+            yaml '''   
                 apiVersion: v1
                 kind: Service
                 metadata:
