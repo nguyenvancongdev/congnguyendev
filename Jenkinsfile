@@ -22,21 +22,6 @@ pipeline {
                                 ports:
                                     containerPort: 8080
                 '''
-            yaml '''   
-                apiVersion: v1
-                kind: Service
-                metadata:
-                    name: nginx-svc
-                spec:
-                    ports:
-                    -   port: 80
-                        targetPort: 8080
-                        protocol: TCP
-                        name: http
-                    selector:
-                        app: nginx-deployment
-                    type: ClusterIP
-            '''
         } 
     }
     stages {
