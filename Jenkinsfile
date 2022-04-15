@@ -38,6 +38,8 @@ pipeline {
                     app: nginx-deployment
                 type: ClusterIP
             '''
+        } 
+    }
     stages {
         stage('Clone') {
             steps {
