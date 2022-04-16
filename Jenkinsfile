@@ -10,7 +10,10 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                echo 'ggg'
+             container('maven'){
+                 sh 'mvn -version'
+             }
+             
             }
         }
     }
