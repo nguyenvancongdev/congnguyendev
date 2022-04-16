@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: kaniko
 spec:
-    container: 
+    containers: 
       - name: kubectl
         image: joshendriks/alpinr-k8s
         command:
