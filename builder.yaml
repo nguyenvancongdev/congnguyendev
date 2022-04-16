@@ -1,5 +1,4 @@
 
-    container: 
       - name: kaniko
         image: gcr.io/kaniko-project/executor:debug
         imagePullPolicy: Always
@@ -10,12 +9,3 @@
         volumeMounts:
           - name: jenkins-docker-cfg
             mountPath: /kanico/.docker
-    volumes:
-      - name: jenkins-docker-cfg
-        projected:
-          sources:
-            - secret:
-                name: docker-credentials
-                items:
-                  - key: .dockerconfigjson
-                    path: config.json
