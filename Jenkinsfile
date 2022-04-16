@@ -8,7 +8,7 @@ pipeline {
         stage('Clone') {
             steps {
              container('node'){
-              sh 'npm version'
+                npm version
              }
             }
         }
