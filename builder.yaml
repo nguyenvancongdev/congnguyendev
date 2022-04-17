@@ -35,3 +35,8 @@ spec:
       command:
         - /busybox/cat
       tty: true
+    - name: kubectl
+      image: joshendriks/alpine-k8s
+      command:
+        - /bin/cat
+      tty: true
