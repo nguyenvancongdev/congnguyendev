@@ -10,9 +10,8 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-             container('maven'){
-                 sh 'mvn -version'
-             }
+            // 
+            echo 'fff'
              
             }
         }
