@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Kaniko Build & Push Image') {
             steps {
-                container('kaniko')
+                container('kaniko') {
+
                 script {
                     // sh '''
                     // /kaniko/executor --dockerfile 'pwd'/Dockerfile \
@@ -19,6 +20,7 @@ pipeline {
                                       
                     // '''
                     echo 'rr'
+                }
                 }
             // 
             echo 'fff'
