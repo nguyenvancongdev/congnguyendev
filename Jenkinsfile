@@ -15,7 +15,7 @@ pipeline {
                     sh '''
                     /kaniko/executor --dockerfile `pwd`/Dockerfile \
                                      --context `pwd` \
-                                     --destination 'yeu:latest'
+                                     --destination 'nguyenvancongdev/automation_IOPS:latest'
                                       
                     '''
                 
