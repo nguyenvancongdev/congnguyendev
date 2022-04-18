@@ -12,13 +12,13 @@ pipeline {
             steps {
                 container('kaniko') {
                 script {
-                    sh '''
-                    /kaniko/executor --dockerfile 'pwd'/Dockerfile \
-                                     --context 'pwd' \
-                                     --destination=justmeandopensource/myweb:${BUILD_NUMBER}
+                    // sh '''
+                    // /kaniko/executor --dockerfile 'pwd'/Dockerfile \
+                    //                  --context 'pwd' \
+                    //                  --destination=justmeandopensource/myweb:${BUILD_NUMBER}
                                       
-                    '''
-                    // echo 'rr'
+                    // '''
+                    echo 'rr'
                 }
                 }
             // 
