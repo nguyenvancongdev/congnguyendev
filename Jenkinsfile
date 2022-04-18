@@ -13,8 +13,8 @@ pipeline {
                 container('kaniko') {
                 script {
                     sh '''
-                    /kaniko/executor --dockerfile 'pwd'/Dockerfile \
-                                     --context 'pwd' \
+                    /kaniko/executor --dockerfile `pwd`/Dockerfile \
+                                     --context `pwd` \
                                      --destination 'yeu:latest'
                                       
                     '''
