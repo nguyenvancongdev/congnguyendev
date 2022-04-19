@@ -11,10 +11,8 @@ spec:
         tty: true
       - name: kaniko
         image: gcr.io/kaniko-project/executor:debug
-        args: ["--context=git://github.com/nguyenvancongdev/automation_IOPS",
-          "--destination=nguyenvancongdev/demo-hello-users:v1"]
-        # command:
-        #   - /busybox/cat
+        command:
+          - /busybox/cat
         tty: true
         volumeMounts:
           - name: kaniko-secret
