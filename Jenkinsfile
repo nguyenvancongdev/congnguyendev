@@ -12,13 +12,13 @@ pipeline {
             steps {
                 container('kaniko') {
                 script {
-                    sh '''
-                    /kaniko/executor --dockerfile `pwd`/Dockerfile \
-                                     --context `pwd` \
-                                     --destination nguyenvancongdev/demo-hello-users:v1
+                    // sh '''
+                    // /kaniko/executor --dockerfile `pwd`/Dockerfile \
+                    //                  --context `pwd` \
+                    //                  --destination nguyenvancongdev/demo-hello-users:v1
                                     
                                       
-                    '''
+                    // '''
                 
                 }
                 }
