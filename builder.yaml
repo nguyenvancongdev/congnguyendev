@@ -17,7 +17,6 @@ spec:
         volumeMounts:
           - name: kaniko-secret
             mountPath: /kanico/.docker
-    restartPolicy: Never
     volumes:
       - name: kaniko-secret
         secret:
