@@ -13,12 +13,9 @@ pipeline {
                 container('kaniko') {
                     script {
                         sh '''
-                        
                         /kaniko/executor --dockerfile `pwd`/Dockerfile \
-                                        --context `pwd` \
-                                        --destination= nguyenvancongdev/automation-iops:v1
-                                        
-                                        
+                                         --context `pwd` \
+                                         --destination= nguyenvancongdev/automation-iops:v1          
                         '''
                     }
                 }             
