@@ -16,7 +16,9 @@ pipeline {
                         /kaniko/executor --dockerfile `pwd`/Dockerfile \
                                          --context `pwd` \
                                          --insecure  \
-                                         --no-push      
+                                         --no-push  
+
+                        docker-v                     
                         '''
                     }
                 }             
