@@ -15,7 +15,8 @@ pipeline {
                         sh '''
                         /kaniko/executor --dockerfile `pwd`/Dockerfile \
                                          --context `pwd` \
-                                         --destination nguyenvancongdev/automation-iops:${BUILD_NUMBER}        
+                                         --destination nguyenvancongdev/automation-iops:${BUILD_NUMBER}
+                                         --insecure        
                         '''
                     }
                 }             
