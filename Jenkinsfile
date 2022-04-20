@@ -34,7 +34,7 @@ pipeline {
          stage('docker') {
             steps {
                 container('docker') {
-                   sh 'docker -v'
+                   sh 'docker build -t nguyenvancong:v1 .'
                 }    
             }
         }
