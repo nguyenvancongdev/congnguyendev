@@ -37,7 +37,9 @@ pipeline {
             steps {
                 container('docker') {
                    sh '''
-                   docker build -t congthang `pwd`
+                   docker build -t nguyenvancongdev/automation-iops `pwd`
+                   docker login --username=nguyenvancongdev --password=Apr@2021
+                   docker push nguyenvancongdev/automation-iops
                    '''
                 }    
             }
