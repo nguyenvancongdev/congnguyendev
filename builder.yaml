@@ -16,7 +16,10 @@ spec:
         tty: true
         volumeMounts:
           - name: kaniko-secret
-            mountPath: /kanico/.docker
+            mountPath: /kanico/.docker     
+      - name: docker
+        image: docker
+        args: ["sleep", "10000"]
     volumes:
       - name: kaniko-secret
         projected:
