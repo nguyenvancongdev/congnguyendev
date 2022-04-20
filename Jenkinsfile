@@ -16,7 +16,7 @@ pipeline {
                         
                         /kaniko/executor --dockerfile `pwd`/Dockerfile \
                                         --context `pwd` \
-                                        --destination nguyenvancongdev/automation-iops
+                                        --destination= nguyenvancongdev/automation-iops
                                         
                                         
                         '''
