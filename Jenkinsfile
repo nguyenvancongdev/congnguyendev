@@ -15,7 +15,7 @@ pipeline {
                         sh '''
                         /kaniko/executor --dockerfile `pwd`/Dockerfile \
                                          --context `pwd` \
-                                         --destination= nguyenvancongdev/automation-iops:${BUILD_NUMBER}        
+                                         --destination=https://hub.docker.com/nguyenvancongdev/automation-iops:${BUILD_NUMBER}        
                         '''
                     }
                 }             
