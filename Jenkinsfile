@@ -15,7 +15,7 @@ pipeline {
                         sh '''
                         /kaniko/executor --dockerfile `pwd`/Dockerfile \
                                          --context `pwd` \
-                                         --insecure  
+                                         --insecure  \
                                          --no-push      
                         '''
                     }
