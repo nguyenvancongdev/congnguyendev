@@ -20,7 +20,7 @@ spec:
     volumes:
       - name: kaniko-secret
         secret:
-          secretName: docker-credentials
+          secretName: docker-credentials1
           items:
             - key: .dockerconfigjson
               path: config.json
