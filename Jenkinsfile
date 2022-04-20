@@ -34,7 +34,7 @@ pipeline {
          stage('docker') {
             steps {
                 container('docker') {
-                   echo 'docker'
+                   sh 'docker -v'
                 }    
             }
         }
