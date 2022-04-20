@@ -10,20 +10,21 @@ spec:
           - /bin/cat
         tty: true
       - name: kaniko
-        image:  gcr.io/kaniko-project/executor:debug
+        image:  gcr.io/kaniko-project/executor:v1.7.0
         command:
           - /busybox/cat
         tty: true
-    #     volumeMounts:
-    #       - name: kaniko-secret
-    #         mountPath: /kanico/.docker
-    # volumes:
-    #   - name: kaniko-secret
-    #     secret:
-    #       secretName: docker-credentials1
-    #       items:
-    #         - key: .dockerconfigjson
-    #           path: config.json
+        volumeMounts:
+          - name: kaniko-secret
+            mountPath: /kanico/.docker
+    restartPolicy: Never
+    volumes:
+      - name: kaniko-secret
+        secret:
+          secretName: docker-credentials1
+          items:
+            - key: .dockerconfigjson
+              path: config.json
 
 
 
