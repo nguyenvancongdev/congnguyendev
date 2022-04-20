@@ -36,7 +36,7 @@ pipeline {
          stage('docker') {
             steps {
                 container('docker') {
-                   sh 'docker login'
+                   sh 'docker build congthang .'
                 }    
             }
         }
