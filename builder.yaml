@@ -14,16 +14,16 @@ spec:
         command:
           - /busybox/cat
         tty: true
-        volumeMounts:
-          - name: kaniko-secret
-            mountPath: /kanico/.docker
-    volumes:
-      - name: kaniko-secret
-        secret:
-          secretName: docker-credentials1
-          items:
-            - key: .dockerconfigjson
-              path: config.json
+    #     volumeMounts:
+    #       - name: kaniko-secret
+    #         mountPath: /kanico/.docker
+    # volumes:
+    #   - name: kaniko-secret
+    #     secret:
+    #       secretName: docker-credentials1
+    #       items:
+    #         - key: .dockerconfigjson
+    #           path: config.json
 
 
 
