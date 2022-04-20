@@ -20,6 +20,9 @@ spec:
       - name: docker
         image: docker
         args: ["sleep", "10000"]
+        volumeMounts:
+          - name: docker-socket
+            mountPath: /var/run/docker.sock
     volumes:
       - name: kaniko-secret
         projected:
@@ -29,6 +32,9 @@ spec:
               items:
                 - key: .dockerconfigjson
                   path: config.json
+      - name: docker-socket
+        hostPath:
+          path: /var/run/docker.sock
 
 
 

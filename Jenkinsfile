@@ -18,7 +18,7 @@ pipeline {
                                          --insecure  \
                                          --no-push  
 
-                        docker-v                     
+                                   
                         '''
                     }
                 }             
