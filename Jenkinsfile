@@ -36,7 +36,9 @@ pipeline {
          stage('docker') {
             steps {
                 container('docker') {
-                   sh 'docker build congthang .'
+                   sh '''
+                   docker build -t congthang `pwd`
+                   '''
                 }    
             }
         }
