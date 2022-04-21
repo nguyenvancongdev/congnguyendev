@@ -19,8 +19,8 @@ pipeline {
                 //    '''
                     withDockerRegistry(credentialsId:'docker-hub1',url:'https://registry-1.docker.io/'){
                         sh '''
-                            docker build -t nguyenvancongdev/automation-iops:latest `pwd`
-                            docker push nguyenvancongdev/automation-iops:latest
+                            docker build -t nguyenvancongdev/automation-iops:v2 `pwd`
+                            docker push nguyenvancongdev/automation-iops:v2
                         '''
                     }
                 }    
