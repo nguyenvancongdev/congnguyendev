@@ -10,20 +10,17 @@ pipeline {
     stages {
     
          stage('Docker Build & Push Image') {
+             environment {
+                 Docker_Hub = credentials('docker-hub1')
+             }
             steps {
                 container('docker') {
-                //    sh '''
-                //    docker build -t nguyenvancongdev/automation-iops `pwd`
-                //    docker login --username=nguyenvancongdev --password=Apr@2021
-                //    docker push nguyenvancongdev/automation-iops
-                //    '''
-                    withDockerRegistry(credentialsId:'docker-hub1',url:'docker.io/nguyenvancongdev'){
-                        sh label: '', script: 'docker build -t nguyenvancongdev/automation-iops `pwd`'
-                        sh label: '', script: 'docker push nguyenvancongdev/automation-iops'
-                  
-                  
-                   
-                    }
+                   sh '''
+                   docker build -t nguyenvancongdev/automation-iops `pwd`
+                   docker login --username=$Docker_Hub_USR --password=$Docker_Hub_PSW
+                   docker push nguyenvancongdev/automation-iops
+                   '''
+              
                 }    
             }
         }
