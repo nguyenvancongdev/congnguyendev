@@ -12,14 +12,13 @@ pipeline {
          stage('Docker Build & Push Image') {
             steps {
                 container('docker') {
-                //    sh '''
-                //    docker build -t nguyenvancongdev/automation-iops `pwd`
-                //    docker login --username=nguyenvancongdev --password=Apr@2021
-                //    docker push nguyenvancongdev/automation-iops
-                //    '''
+                   sh '''
+                   docker build -t nguyenvancongdev/automation-iops `pwd`
+             
+                   '''
                     withDockerRegistry(credentialsId:'docker-hub1',url:'https://registry-1.docker.io/'){
                         sh '''
-                            docker build -t nguyenvancongdev/automation-iops:v2 `pwd`
+                  
                             docker push nguyenvancongdev/automation-iops:v2
                         '''
                     }
