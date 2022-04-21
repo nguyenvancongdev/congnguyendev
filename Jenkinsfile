@@ -12,17 +12,18 @@ pipeline {
          stage('Docker Build & Push Image') {
             steps {
                 container('docker') {
-                   sh '''
-                   docker build -t nguyenvancongdev/automation-iops `pwd`
-                   docker login --username=nguyenvancongdev --password=Apr@2021
-                   docker push nguyenvancongdev/automation-iops
-                   '''
-                    // withDockerRegistry(credentialsId:'docker-hub1',url:'https://registry-1.docker.io/'){
-                    //     sh '''
+                //    sh '''
+                //    docker build -t nguyenvancongdev/automation-iops `pwd`
+                //    docker login --username=nguyenvancongdev --password=Apr@2021
+                //    docker push nguyenvancongdev/automation-iops
+                //    '''
+                    withDockerRegistry(credentialsId:'docker-hub1',url:'https://registry-1.docker.io/'){
+                        sh label: '', script: 'docker build -t nguyenvancongdev/automation-iops `pwd`'
+                        sh label: '', script: 'docker push nguyenvancongdev/automation-iops'
                   
-                    //         docker push nguyenvancongdev/automation-iops:v2
-                    //     '''
-                    // }
+                  
+                   
+                    }
                 }    
             }
         }
