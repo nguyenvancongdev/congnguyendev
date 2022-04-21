@@ -17,7 +17,7 @@ pipeline {
                 //    docker login --username=nguyenvancongdev --password=Apr@2021
                 //    docker push nguyenvancongdev/automation-iops
                 //    '''
-                    withDockerRegistry(credentialsId:'docker-hub1',url:'https://index.docker.io/v2'){
+                    withDockerRegistry(credentialsId:'docker-hub1',url:'https://registry-1.docker.io/'){
                         sh '''
                             docker build -t nguyenvancongdev/automation-iops:latest `pwd`
                             docker push nguyenvancongdev/automation-iops:latest
