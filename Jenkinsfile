@@ -8,20 +8,22 @@ pipeline {
         } 
     }
     stages {
-        stage('Kaniko Build & Push Image') {
+    
+         stage('Docker Build & Push Image') {
             steps {
-                container('kaniko') {
-                    script {
+                container('docker') {
+                //    sh '''
+                //    docker build -t nguyenvancongdev/automation-iops `pwd`
+                //    docker login --username=nguyenvancongdev --password=Apr@2021
+                //    docker push nguyenvancongdev/automation-iops
+                //    '''
+                    withDockerRegistry(credentialsId:'docker-hub1',url:'https:index.docker.io/v1/'){
                         sh '''
-                        /kaniko/executor --dockerfile `pwd`/Dockerfile \
-                                         --context `pwd` \
-                                         --insecure  \
-                                         --no-push  
-
-                                   
+                            docker build -t nguyenvancongdev/automation-iops `pwd`
+                            docker push nguyenvancongdev/automation-iops
                         '''
                     }
-                }             
+                }    
             }
         }
          stage('Deploy App to Kubernetes') {
@@ -30,17 +32,6 @@ pipeline {
                     withCredentials([file(credentialsId: 'kubectl-config', variable:'KUBECONFIG')]) {
                         echo 'ggg'
                     }
-                }    
-            }
-        }
-         stage('docker') {
-            steps {
-                container('docker') {
-                   sh '''
-                   docker build -t nguyenvancongdev/automation-iops `pwd`
-                   docker login --username=nguyenvancongdev --password=Apr@2021
-                   docker push nguyenvancongdev/automation-iops
-                   '''
                 }    
             }
         }

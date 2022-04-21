@@ -9,14 +9,6 @@ spec:
         command:
           - /bin/cat
         tty: true
-      - name: kaniko
-        image:  gcr.io/kaniko-project/executor:debug
-        command:
-          - /busybox/cat
-        tty: true
-        volumeMounts:
-          - name: kaniko-secret
-            mountPath: /kanico/.docker     
       - name: docker
         image: docker
         args: ["sleep", "10000"]
@@ -24,32 +16,6 @@ spec:
           - name: docker-socket
             mountPath: /var/run/docker.sock
     volumes:
-      - name: kaniko-secret
-        projected:
-          sources:    
-          -  secret:
-              name: regcred
-              items:
-                - key: .dockerconfigjson
-                  path: config.json
       - name: docker-socket
         hostPath:
           path: /var/run/docker.sock
-
-
-
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: kaniko
-# spec:
-#     containers: 
-#     - name: kaniko
-#       image: gcr.io/kaniko-project/executor:debug
-#       command:
-#         - /busybox/cat
-#       tty: true
-#     - name: kubectl
-#       image: joshendriks/alpine-k8s
-#       command:
-#         - /bin/cat
