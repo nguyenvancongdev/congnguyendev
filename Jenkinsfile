@@ -8,7 +8,6 @@ pipeline {
         } 
     }
     stages {
-    
          stage('Docker Build & Push Image') {
              environment {
                  Docker_Hub = credentials('docker-hub1')
@@ -20,7 +19,6 @@ pipeline {
                    docker login --username=$Docker_Hub_USR --password=$Docker_Hub_PSW
                    docker push nguyenvancongdev/automation-iops
                    '''
-              
                 }    
             }
         }
@@ -28,7 +26,7 @@ pipeline {
             steps {
                 container('kubectl') {
                     withCredentials([file(credentialsId: 'kubectl-config', variable:'KUBECONFIG')]) {
-                        echo 'ggg'
+                       sh " kubectl scale deploy/nginx-1 --replicas=2"
                     }
                 }    
             }
