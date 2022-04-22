@@ -24,11 +24,13 @@ pipeline {
         }
          stage('Deploy App to Kubernetes') {
             steps {
-                container('kubectl') {
-                    withCredentials([file(credentialsId: 'kubectl-config', variable:'KUBECONFIG')]) {
+                // container('kubectl') {
+                //     withCredentials([file(credentialsId: 'kubectl-config', variable:'KUBECONFIG')]) {
+                //        sh " kubectl scale deploy/nginx-1 --replicas=2"
+                //     }
+                // }   
                        sh " kubectl scale deploy/nginx-1 --replicas=2"
-                    }
-                }    
+
             }
         }
     }
