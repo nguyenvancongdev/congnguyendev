@@ -26,7 +26,7 @@ pipeline {
             steps {
                 container('kubectl') {
                    
-                       sh " kubectl scale deploy/nginx-1 --replicas=1"
+                       sh "kubectl set image deployment nginx-1 nginx-1=nguyenvancongdev/automation-iops"
                     
                 }   
             }
