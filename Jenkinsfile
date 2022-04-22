@@ -25,9 +25,9 @@ pipeline {
          stage('Deploy App to Kubernetes') {
             steps {
                 container('kubectl') {
-                    withCredentials([file(credentialsId: 'mykubectconfig-demo', variable:'KUBECONFIG')]) {
+                   
                        sh " kubectl scale deploy/nginx-1 --replicas=2"
-                    }
+                    
                 }   
             }
         }
