@@ -26,7 +26,7 @@ pipeline {
             steps {
                 container('kubectl') {
                    
-                       sh " kubectl scale deploy/nginx-1 --replicas=2"
+                       sh " kubectl scale deploy/nginx-1 --replicas=1"
                     
                 }   
             }
