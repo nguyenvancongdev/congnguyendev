@@ -15,9 +15,9 @@ pipeline {
             steps {
                 container('docker') {
                    sh '''
-                   docker build -t nguyenvancongdev/automation-iops `pwd`
+                   docker build -t nguyenvancongdev/automation-iops:${BUILD_NUMBER} `pwd`
                    docker login --username=$Docker_Hub_USR --password=$Docker_Hub_PSW
-                   docker push nguyenvancongdev/automation-iops
+                   docker push nguyenvancongdev/automation-iops:${BUILD_NUMBER}
                    '''
                 }    
             }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 container('kubectl') {
                    
-                       sh "kubectl set image deployment nginx-1 nginx-1=nguyenvancongdev/automation-iops"
+                       sh 'kubectl set image deployment nginx-1 nginx-1=nguyenvancongdev/automation-iops:${BUILD_NUMBER}'
                     
                 }   
             }
