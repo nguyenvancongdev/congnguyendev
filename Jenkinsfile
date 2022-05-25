@@ -22,9 +22,7 @@ pipeline {
          stage('Deploy App to Kubernetes') {
             steps {
                 container('kubectl') {
-                   
                        sh 'kubectl set image deployment congnguyendev congnguyendev=nguyenvancongdev/congnguyendev:${BUILD_NUMBER}'
-                    
                 }   
             }
         }
