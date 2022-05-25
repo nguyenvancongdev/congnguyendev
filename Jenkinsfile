@@ -23,7 +23,7 @@ pipeline {
             steps {
                 container('kubectl') {
                    
-                       sh 'kubectl set image deployment nginx-1 nginx-1=nguyenvancongdev/congnguyendev:${BUILD_NUMBER}'
+                       sh 'kubectl set image deployment congnguyendev congnguyendev=nguyenvancongdev/congnguyendev:${BUILD_NUMBER}'
                     
                 }   
             }
