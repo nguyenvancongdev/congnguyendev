@@ -1,10 +1,29 @@
 pipeline {
-    agent any
-
+    agent { 
+        kubernetes {
+            yamlFile 'builder.yaml'           
+        } 
+    }
     stages {
-        stage('Clone') {
+         stage('Docker Build & Push Image') {
+             environment {
+                 Docker_Hub = credentials('docker-hub')
+             }
             steps {
-                git 'https://github.com/nguyenvancongdev/automation_IOPS.git'
+                container('docker') {
+                   sh '''
+                   docker build -t nguyenvancongdev/congnguyendev:${BUILD_NUMBER} `pwd`
+                   docker login --username=$Docker_Hub_USR --password=$Docker_Hub_PSW
+                   docker push nguyenvancongdev/congnguyendev:${BUILD_NUMBER}
+                   '''
+                }    
+            }
+        }
+         stage('Deploy App to Kubernetes') {
+            steps {
+                container('kubectl') {
+                       sh 'kubectl set image deployment congnguyendev congnguyendev=nguyenvancongdev/congnguyendev:${BUILD_NUMBER}'
+                }   
             }
         }
     }
