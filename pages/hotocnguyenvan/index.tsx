@@ -4,7 +4,7 @@ const Hotocnguyenvan: NextPage = () => {
   return (
   <div>
       <Head>
-          <title>Blog lập trình </title>
+          <title>Họ Tộc Nguyễn Văn </title>
       </Head>
       trang web cua ho toc nguyen van
   </div>
