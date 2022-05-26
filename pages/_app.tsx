@@ -1,10 +1,11 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import Menu from '../components/Menu'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-    <div>đây là thanh menu</div>
+    <Menu />
     <Component {...pageProps} />
     </> 
    )
