@@ -3,7 +3,10 @@ import type { NextPage } from 'next'
 const Hotocnguyenvan: NextPage = () => {
   return (
   <div>
-   trang web cua ho toc nguyen van
+      <Head>
+          <title>Blog lập trình </title>
+      </Head>
+      trang web cua ho toc nguyen van
   </div>
   )
 }
