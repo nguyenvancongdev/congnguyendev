@@ -5,7 +5,7 @@ import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+   <div>
       <Head>
         <title>Công Nguyễn Developer </title>
       </Head>
