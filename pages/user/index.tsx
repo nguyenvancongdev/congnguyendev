@@ -10,10 +10,8 @@ const Home: NextPage = () => {
       </Head>
       <Menu />
       <main>
-       đây là nội dung trang web
+       đây là nội dung user index
       </main>
-
-     
     </div>
   )
 }
