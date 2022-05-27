@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
      <Head>
-          <title>hello moi nguoi</title>
+          <title>Công Nguyễn Dev</title>
           <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
       </Head>
     <Component {...pageProps} />
