@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <title>Công Nguyễn Developer </title>
       </Head>
 
-      <main className={styles.main}>
+      <main>
        đây là nội dung trang web
       </main>
 
