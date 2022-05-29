@@ -5,9 +5,9 @@ const Blog: NextPage = () => {
   return (
     <div>
       <Head>
-          <title>Blog lập trình </title>
+          <title>Blog Lập Trình </title>
       </Head>
-      Viết blog
+      đây là nội dung blog
     </div>
   )
 }
