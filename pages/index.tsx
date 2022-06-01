@@ -7,8 +7,9 @@ const Home: NextPage = () => {
   const router = useRouter()
   return (
    <>
-   <Menu />
-   <Blog/>
+   
+  
+   nguyeenx vawn cong
    </>
   )
 }
